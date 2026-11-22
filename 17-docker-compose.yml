@@ -1,0 +1,15 @@
+services:
+  aman:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      # Any OpenAI-compatible upstream: Ollama, vLLM, llama.cpp, OpenAI...
+      AMAN_UPSTREAM: ${AMAN_UPSTREAM:-http://host.docker.internal:11434/v1}
+      AMAN_AUDIT: /var/log/aman/audit.jsonl
+    volumes:
+      - aman-audit:/var/log/aman
+    restart: unless-stopped
+
+volumes:
+  aman-audit:

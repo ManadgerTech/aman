@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aman-privacy-gateway"
+version = "0.1.0"
+description = "Self-hosted privacy gateway for LLM APIs with Arabic, French and Moroccan PII detection."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Manadger Tech", email = "contact@manadgerhost.com"}]
+requires-python = ">=3.9"
+keywords = ["privacy", "pii", "llm", "proxy", "redaction", "arabic", "morocco", "gdpr"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ManadgerTech/aman"
+Issues = "https://github.com/ManadgerTech/aman/issues"
+
+[project.scripts]
+aman = "aman:main"
+
+[tool.setuptools]
+py-modules = ["aman"]
